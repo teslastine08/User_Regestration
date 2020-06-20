@@ -45,3 +45,19 @@ if [[ "$email" =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,4}$ ]]
 }
 
 email
+
+mobile () {
+
+read -p "Enter Mobile no: " M
+
+if [[ "$M" =~ ^\(?([0-9]{2})\)?([ ]?)([0-9]{10}) ]]
+
+    then
+        echo "Mobile no $M is valid."
+    else
+        echo "Mobile no $M is invalid."
+ fi
+
+}
+
+mobile
