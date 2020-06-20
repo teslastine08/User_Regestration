@@ -61,3 +61,28 @@ if [[ "$M" =~ ^\(?([0-9]{2})\)?([ ]?)([0-9]{10}) ]]
 }
 
 mobile
+
+password () {
+
+read -p "Enter pass: " P
+
+if [[ $P =~ ^([a-zA-Z0-9@#!]){8,}$ ]]
+then
+        if [[ $P =~ ^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$ ]]
+        then
+                if [[ $P =~ ^[a-zA-Z@#!]*[0-9]+[a-zA-Z@#!]*$ ]]
+                then
+                        if [[ $P =~ ^([a-zA-Z0-9]*)[^a-zA-Z_0-9\s]([a-zA-Z0-9]*)$ ]]
+                        then
+                        echo "success"
+			fi
+
+                else echo "1 char"
+                fi
+        else echo "1 digit"
+        fi
+else echo "1 Upper case"
+fi
+
+}
+password
