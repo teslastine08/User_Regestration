@@ -29,3 +29,19 @@ if [[ $F =~ ^[A-Z]{1}([a-z]{2,}) ]]
 }
 
 lastname
+
+email () {
+
+read -p "Enter admin email: " email
+
+if [[ "$email" =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,4}$ ]]
+
+    then
+        echo "Email address $email is valid."
+    else
+        echo "Email address $email is invalid."
+ fi
+
+}
+
+email
